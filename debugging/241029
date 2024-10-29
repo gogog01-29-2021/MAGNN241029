@@ -1,0 +1,37 @@
+1.problem
+
+solution
+1. In terminal
+(py36) w@s-MacBook-Air MAGNN % python -X faulthandler magnn.py
+
+WARNING:tensorflow:From /Users/w/Library/Python/3.11/lib/python/site-packages/tensorflow/python/compat/v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+Traceback (most recent call last):
+  File "/Users/w/Dev projects 240310/240715 MAGNN/MAGNN/magnn.py", line 5, in <module>
+    from model.magnn_model import train_magnn_embedding
+  File "/Users/w/Dev projects 240310/240715 MAGNN/MAGNN/model/magnn_model.py", line 10, in <module>
+    from model.price_lstm_embedding import get_price_embedding_df
+  File "/Users/w/Dev projects 240310/240715 MAGNN/MAGNN/model/price_lstm_embedding.py", line 12, in <module>
+    from prepossessing.data_prepare import get_price_segment
+  File "/Users/w/Dev projects 240310/240715 MAGNN/MAGNN/prepossessing/data_prepare.py", line 107, in <module>
+    en = Encoder(embedding='bert', model='bert_base_cased', max_seq_length=256)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/py36/lib/python3.6/site-packages/embedding_as_service/utils.py", line 164, in __call__
+    cls._instanceDict[argset] = super(ArgSingleton, cls).__call__(*args, **kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/py36/lib/python3.6/site-packages/embedding_as_service/text/encode.py", line 25, in __init__
+    self.embedding_cls = importlib.import_module(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/py36/lib/python3.6/site-packages/embedding_as_service/text/bert/__init__.py", line 6, in <module>
+    import tensorflow_hub as hub
+  File "/opt/anaconda3/envs/py36/lib/python3.6/site-packages/tensorflow_hub/__init__.py", line 30, in <module>
+    from tensorflow_hub.estimator import LatestModuleExporter
+  File "/opt/anaconda3/envs/py36/lib/python3.6/site-packages/tensorflow_hub/estimator.py", line 63, in <module>
+    class LatestModuleExporter(tf_v1.estimator.Exporter):
+                               ^^^^^^^^^^^^^^^
+AttributeError: module 'tensorflow_hub.tf_v1' has no attribute 'estimator'
+(py36) w@s-MacBook-Air MAGNN % 
