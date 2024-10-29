@@ -32,6 +32,28 @@ Traceback (most recent call last):
     from tensorflow_hub.estimator import LatestModuleExporter
   File "/opt/anaconda3/envs/py36/lib/python3.6/site-packages/tensorflow_hub/estimator.py", line 63, in <module>
     class LatestModuleExporter(tf_v1.estimator.Exporter):
+
+
+
+
+2.Dependencies
+
+Solution A. embedding as service to (Huggingface transformer, sentencetransformer)
+(py36) w@s-MacBook-Air MAGNN % pip install tensorflow-hub==0.12.0
+
+Collecting tensorflow-hub==0.12.0
+  Downloading tensorflow_hub-0.12.0-py2.py3-none-any.whl (108 kB)
+     |████████████████████████████████| 108 kB 9.6 MB/s 
+Requirement already satisfied: numpy>=1.12.0 in /opt/anaconda3/envs/py36/lib/python3.6/site-packages (from tensorflow-hub==0.12.0) (1.16.4)
+Requirement already satisfied: protobuf>=3.8.0 in /opt/anaconda3/envs/py36/lib/python3.6/site-packages (from tensorflow-hub==0.12.0) (3.19.6)
+Installing collected packages: tensorflow-hub
+  Attempting uninstall: tensorflow-hub
+    Found existing installation: tensorflow-hub 0.4.0
+    Uninstalling tensorflow-hub-0.4.0:
+      Successfully uninstalled tensorflow-hub-0.4.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+embedding-as-service 3.1.2 requires tensorflow-hub==0.4.0, but you have tensorflow-hub 0.12.0 which is incompatible.
+Successfully installed tensorflow-hub-0.12.0
                                ^^^^^^^^^^^^^^^
 AttributeError: module 'tensorflow_hub.tf_v1' has no attribute 'estimator'
 (py36) w@s-MacBook-Air MAGNN % 
